@@ -3,6 +3,7 @@
     --purple100: hsl(275, 100%, 97%);
     --purple600: hsl(292, 16%, 49%);
     --purple950: hsl(292, 42%, 14%);
+    --hover-color: hsl(278.6, 86.5%, 53.5%);
 }
 
 /* Base */
@@ -10,8 +11,104 @@
     box-sizing: border-box;
 }
 
-/* Component */
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding-inline: 1.5rem;
+    background: var(--purple100) url(../assets/images/background-pattern-mobile.svg) no-repeat top / contain;
+    font: normal 400 1rem/1.5 "Work Sans", sans-serif;
+}
 
+/* Component */
+.c-faq{
+    background-color: white;
+    margin-block: auto;
+    max-width: 38rem;
+    padding: 1rem 1.25rem 1.5rem 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.05);
+}
+
+.c-faq__item{
+    margin-block-start: 1.5em;
+}
+
+.c-faq__item:not(:last-child){
+    border-block-end: 1px solid var(--purple100);
+    padding-block-end: 1.5em;
+}
+
+.c-faq__title{
+    margin-block-start: 0;
+    color: var(--purple950);
+}
+
+.c-faq__title::before{
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-inline-end: 1.25rem;
+    background: url(../assets/images/icon-star.svg) center / contain no-repeat;
+}
+
+.c-faq__question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.75em;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--purple950);
+    list-style: none;
+    cursor: pointer;
+    
+    transition: max-height 0.3s ease;
+}
+
+.c-faq__question:hover, .c-faq__question:focus-visible{
+    color: var(--hover-color)
+
+}
+
+/* Safari */
+.c-faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.c-faq__question::after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    background: url(../assets/images/icon-plus.svg) center / contain no-repeat;
+
+    transition: transform 0.4s ease;
+}
+
+.c-faq__item[open] .c-faq__question::after{
+    background: url(../assets/images/icon-minus.svg) center / contain no-repeat;
+
+    transform: rotate(180deg);
+}
+
+.c-faq__item::details-content{
+    opacity: 0;
+    transition:
+        opacity 0.4s,
+        content-visibility 0.4s allow-discrete;
+}
+
+.c-faq__item[open]::details-content{
+    opacity: 1;
+}
+
+.c-faq__answer{
+    margin-block: 1.3em 0em;
+    color: var(--purple600);  
+}
 
 /* Frontend Mentor attribution */
 .attribution { font-size: 0.6875rem; text-align: center; }
