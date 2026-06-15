@@ -1,0 +1,42 @@
+/* Breakpoints */
+
+@media screen and (min-width: 32.5rem){
+    body{
+        align-items: center;
+        background-image: url(../assets/images/background-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    
+    .c-faq{
+        padding: 2rem 2.5rem 2.5rem 2.5rem;
+    }
+
+    .c-faq__title{
+        font-size: 3.5rem;
+    }
+
+    .c-faq__title::before{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+}
+
+@media screen and (min-width: 90rem){
+    body{
+        background-size: 100% auto;
+    }
+}
+
+/* User preferences */
+@media (prefers-reduced-motion: reduce) {
+    .c-faq__item::details-content, 
+    .c-faq__question::after{
+        transition: none;
+        animation: none;
+    }
+}

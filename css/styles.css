@@ -15,7 +15,6 @@ body{
     min-height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
     padding-inline: 1.5rem;
     background: var(--purple100) url(../assets/images/background-pattern-mobile.svg) no-repeat top / contain;
     font: normal 400 1rem/1.5 "Work Sans", sans-serif;
@@ -25,7 +24,7 @@ body{
 .c-faq{
     background-color: white;
     margin-block: auto;
-    max-width: 38rem;
+    max-width: 40.3125rem;
     padding: 1rem 1.25rem 1.5rem 1.25rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 0.05);
