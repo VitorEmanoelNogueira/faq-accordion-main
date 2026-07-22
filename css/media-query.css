@@ -40,3 +40,9 @@
         animation: none;
     }
 }
+
+@media (forced-colors: active){
+    .c-faq{
+        border: 0.1rem solid currentColor;
+    }
+}
